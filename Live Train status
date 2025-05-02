@@ -1,0 +1,61 @@
+# LTS
+Live Train status
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Where is My Train</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Where is My Train</h1>
+    <label for="train">Enter Train Number</label>
+    <input type="text" id="train" placeholder="e.g. 12345">
+    
+    <button onclick="searchTrain()">Search</button>
+    
+    <div class="result" id="result">
+      Train status will appear here...
+    </div>
+  </div>
+
+  <script>
+    function searchTrain() {
+      const trainNumber = document.getElementById("train").value;
+      const result = document.getElementById("result");
+
+      if (trainNumber.trim() === "") {
+        result.innerHTML = "Please enter a train number.";
+      } else {
+        result.innerHTML = "Fetching train status for train #" + trainNumber + "... (mock result)";
+        // In a real app, you'd fetch data from an API here
+      }
+    }
+  </script>
+</body>
+</html>

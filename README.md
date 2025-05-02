@@ -1,2 +1,0 @@
-# LTS
-Live Train status
